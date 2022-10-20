@@ -18,7 +18,7 @@
         <title>WINBRD 윈비알디</title>
         <link href="./bootstrap4/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <script src="https://kit.fontawesome.com/6fe010ed0c.js" crossorigin="anonymous"></script>
-
+        
         <!--
         Google Fonts
         ============================================= -->
@@ -41,18 +41,16 @@
         <link rel="stylesheet" href="css/main.css">
         <!-- Main Responsive -->
         <link rel="stylesheet" href="css/responsive.css">
-
-        <link rel="stylesheet" href="css/styles1.css">
 		
 		
 		<!-- Modernizer Script for old Browsers -->
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-		
+
     </head>
 	
     <body>
-
-        <!--
+        <body style="background-color:#000000">
+            <!--
         Fixed Navigation
         ==================================== -->
         <header id="navigation" class="navbar-fixed-top">
@@ -66,22 +64,23 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <!-- /responsive nav button -->
+
 
                     <!-- logo -->
-                    <h1 class="navbar-brand"> 
+                    <h1 class="navbar-brand">
                         <a href="./index.html"><h2>WINBRD</h2></a>
                     </h1>
-                    <!-- /logo -->
+
 
                     </div>
 
                     <!-- main nav -->
                     <nav class="collapse navigation navbar-collapse navbar-right" role="navigation">
-                        <ul id="nav" class="nav navbar-nav">
+                        <ul id="nav" class="nav navbar-nav ">
+
                             <li><a href="./raffle.html">Raffle</a></li>
-                            <li><a href="Promotions.html">Promotions</a></li>                                                     
-                            <li><a href="./Community.html">Community</a></li>
+                            <li><a href="./Promotions.html">Promotions</a></li>
+                            <li class="current"><a href="./Community.html">Community</a></li>
                         </ul>
 
                         <ul class="navbar-nav ml-auto">
@@ -91,6 +90,7 @@
                         </ul>
 
                     </nav> 
+
                     <!-- Modal -->
                     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -125,70 +125,16 @@
                 </div>
 
             </div>
-        </header>
-        <!--
-        End Fixed Navigation
-        ==================================== -->
+        
+
+            <section>
+                
 
 
-        <!--
-        Home Slider
-        ==================================== -->
-        <section id="home">     
-            <div id="home-carousel" class="carousel slide" data-interval="false">
-                <ol class="carousel-indicators">
-                    <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#home-carousel" data-slide-to="1"></li>
-                    <li data-target="#home-carousel" data-slide-to="2"></li>
-                </ol>
-                <!--/.carousel-indicators-->
 
-                <div class="carousel-inner">
+            </section>
 
-                    <div class="item active"  style="background-image: url('img/slider/abc.jpg')" >
-                        <div class="carousel-caption">
-                            <div class="animated bounceInRight">
-                                <h2>WINBRD</h2><br><h3>원하는 브랜드와 패션 응모 정보를 찾다 </h3>
-                            </div>
-                        </div>
-                    </div>              
 
-                    <div class="item" style="background-image: url('img/slider/abcd.jpg')">                
-                        <div class="carousel-caption">
-                            <div class="animated bounceInDown">
-                                <h3> <br> </h3>
-                                <p>신상품 발매, 래플 응모, 시즌오프세일 등의 <br> 다양한 패션 정보를 윈비알디에서 한 눈에 <br>볼 수 있습니다.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item" style="background-image: url('img/slider/ab.jpg')">                 
-                         <div class="carousel-caption">
-                            <div class="animated bounceInUp">
-                                <h2> <br> </h2>
-                                <p>윈비알디는 다양성과 희소성을 추구하고 <br> 개성과 감성을 중시하는 고객의 취향에 맞추어 <br>각 브랜드가 지향하는 가치의 플랫폼을 형성합니다.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--/.carousel-inner-->
-                <nav id="nav-arrows" class="nav-arrows hidden-xs hidden-sm visible-md visible-lg">
-                    <a class="sl-prev hidden-xs" href="#home-carousel" data-slide="prev">
-                        <i class="fa fa-angle-left fa-3x"></i>
-                    </a>
-                    <a class="sl-next" href="#home-carousel" data-slide="next">
-                        <i class="fa fa-angle-right fa-3x"></i>
-                    </a>
-                </nav>
-
-            </div>
-        </section>
-        <!--
-        End #home Slider
-        ========================== -->
-
-     
 
 
         <!--
@@ -217,5 +163,9 @@
         <script src="js/wow.min.js"></script>
         <!-- theme custom scripts -->
         <script src="js/main.js"></script>
+        </body>
+
+
+        
     </body>
 </html>

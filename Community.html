@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="ko" class="no-js"> <!--<![endif]-->
     <head>
 
         <!-- Mobile Specific Meta -->
@@ -18,7 +18,8 @@
         <title>WINBRD 윈비알디</title>
         <link href="./bootstrap4/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <script src="https://kit.fontawesome.com/6fe010ed0c.js" crossorigin="anonymous"></script>
-
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!--
         Google Fonts
         ============================================= -->
@@ -43,16 +44,17 @@
         <link rel="stylesheet" href="css/responsive.css">
 
         <link rel="stylesheet" href="css/styles1.css">
+        <link rel="stylesheet" href="css/styles_c.css">
 		
 		
 		<!-- Modernizer Script for old Browsers -->
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-		
+
     </head>
 	
     <body>
-
-        <!--
+        <body style="background-color:#000000">
+            <!--
         Fixed Navigation
         ==================================== -->
         <header id="navigation" class="navbar-fixed-top">
@@ -66,22 +68,23 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <!-- /responsive nav button -->
+
 
                     <!-- logo -->
-                    <h1 class="navbar-brand"> 
+                    <h1 class="navbar-brand">
                         <a href="./index.html"><h2>WINBRD</h2></a>
                     </h1>
-                    <!-- /logo -->
+
 
                     </div>
 
                     <!-- main nav -->
                     <nav class="collapse navigation navbar-collapse navbar-right" role="navigation">
-                        <ul id="nav" class="nav navbar-nav">
+                        <ul id="nav" class="nav navbar-nav ">
+
                             <li><a href="./raffle.html">Raffle</a></li>
-                            <li><a href="Promotions.html">Promotions</a></li>                                                     
-                            <li><a href="./Community.html">Community</a></li>
+                            <li><a href="./Promotions.html">Promotions</a></li>
+                            <li class="current"><a href="./Community.html">Community</a></li>
                         </ul>
 
                         <ul class="navbar-nav ml-auto">
@@ -91,6 +94,7 @@
                         </ul>
 
                     </nav> 
+
                     <!-- Modal -->
                     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -120,76 +124,52 @@
                             </div>
                         </div>
                         </div>
-                    </div>                      
-                    
-                </div>
-
-            </div>
+                    </div>                   
         </header>
-        <!--
-        End Fixed Navigation
-        ==================================== -->
-
-
-        <!--
-        Home Slider
-        ==================================== -->
-        <section id="home">     
-            <div id="home-carousel" class="carousel slide" data-interval="false">
-                <ol class="carousel-indicators">
-                    <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#home-carousel" data-slide-to="1"></li>
-                    <li data-target="#home-carousel" data-slide-to="2"></li>
-                </ol>
-                <!--/.carousel-indicators-->
-
-                <div class="carousel-inner">
-
-                    <div class="item active"  style="background-image: url('img/slider/abc.jpg')" >
-                        <div class="carousel-caption">
-                            <div class="animated bounceInRight">
-                                <h2>WINBRD</h2><br><h3>원하는 브랜드와 패션 응모 정보를 찾다 </h3>
-                            </div>
-                        </div>
-                    </div>              
-
-                    <div class="item" style="background-image: url('img/slider/abcd.jpg')">                
-                        <div class="carousel-caption">
-                            <div class="animated bounceInDown">
-                                <h3> <br> </h3>
-                                <p>신상품 발매, 래플 응모, 시즌오프세일 등의 <br> 다양한 패션 정보를 윈비알디에서 한 눈에 <br>볼 수 있습니다.</p>
-                            </div>
-                        </div>
+               
+        <!-- Page Content-->
+        <section>
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="text-center mb-5 ">
+                        <h1 class="fw-bolder text-col">Our Style</h1>
+                        <p class="lead fw-normal text-muted mb-0">여러분들이 직접 고른 아이템을 재미있는 스토리와 스타일링 팁, 이미지와 함께 올려주세요. <br>댓글을 통해 개인, 브랜드와 직접 소통도 가능합니다.</p>
                     </div>
-
-                    <div class="item" style="background-image: url('img/slider/ab.jpg')">                 
-                         <div class="carousel-caption">
-                            <div class="animated bounceInUp">
-                                <h2> <br> </h2>
-                                <p>윈비알디는 다양성과 희소성을 추구하고 <br> 개성과 감성을 중시하는 고객의 취향에 맞추어 <br>각 브랜드가 지향하는 가치의 플랫폼을 형성합니다.</p>
+                    <div class="row gx-5">
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-5">
+                                <img class="img-fluid rounded-3 mb-3" src="./img/1.PNG" alt="..." width="600" height="400" />
+                                <a class="h3 fw-bolder text-decoration-none  stretched-link text-col" href="community_post.html">유아인 X 무탠다드 아이템을 소개할게 !</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-5">
+                                <img class="img-fluid rounded-3 mb-3" src="./img/2.PNG" alt="..." width="600" height="400" />
+                                <a class="h3 fw-bolder text-decoration-none stretched-link text-col" href="community_post.html">일상 룩에 딱 ! 프루아 백과 F/W 시즌 나기</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-5 mb-lg-0">
+                                <img class="img-fluid rounded-3 mb-3" src="./img/3.PNG" alt="..."  width="600" height="400"/>
+                                <a class="h3 fw-bolder text-decoration-none  stretched-link text-col" href="#">Project name</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative">
+                                <img class="img-fluid rounded-3 mb-3" src="./img/5.PNG" alt="..."  width="600" height="400"/>
+                                <a class="h3 fw-bolder text-decoration-none  stretched-link text-col" href="#!">Project name</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!--/.carousel-inner-->
-                <nav id="nav-arrows" class="nav-arrows hidden-xs hidden-sm visible-md visible-lg">
-                    <a class="sl-prev hidden-xs" href="#home-carousel" data-slide="prev">
-                        <i class="fa fa-angle-left fa-3x"></i>
-                    </a>
-                    <a class="sl-next" href="#home-carousel" data-slide="next">
-                        <i class="fa fa-angle-right fa-3x"></i>
-                    </a>
-                </nav>
-
-            </div>
-        </section>
-        <!--
-        End #home Slider
-        ========================== -->
-
-     
-
+            </section>
+            <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <h2 class="display-4 fw-bolder mb-4 text-col">Let's build something together</h2>
+                    <a class="btn btn-lg btn-primary" href="#!">게시물 작성하기</a>
+                </div>
+            </section>
+        </section>               
 
         <!--
         JavaScripts
@@ -217,5 +197,12 @@
         <script src="js/wow.min.js"></script>
         <!-- theme custom scripts -->
         <script src="js/main.js"></script>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> 
+        </body>
+
+
+        
     </body>
 </html>
