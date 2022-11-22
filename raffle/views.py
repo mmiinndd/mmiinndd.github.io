@@ -1,17 +1,11 @@
-from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+from .models import Post
+
+class PostList(ListView):
+    model = Post
+    ordering = '-pk'
+
+class PostDetail(DetailView):
+    model = Post
 
 # Create your views here.
-
-def base(request):
-    return render(
-        request,
-        'raffle/raffle.html',
-    )
-
-def detail(request):
-    return render(
-        request,
-        'raffle/detail.html',
-    )
-
-
