@@ -27,7 +27,7 @@ urlpatterns = [
     path('', include('single_pages.urls')),
     path('promotions/', include('promotion.urls')),
     path('raffle/', include('raffle.urls')),
-    path('raffle/', include('raffle.urls')),
+
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
