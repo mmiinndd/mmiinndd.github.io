@@ -1,5 +1,7 @@
 {% extends 'community/base.html' %}
 
+
+
 {% block main_area %}
 <div class="text-center mb-5 ">
     <h1 class="fw-bolder text-col">Our Style</h1>
@@ -18,9 +20,9 @@
         {% endif %}
         <a class="h3 fw-bolder text-decoration-none  stretched-link text-col" href="{{ p.get_absolute_url }}" alt="{{ p }} head image">{{ p.title }}</a>
             {% if p.hook_text %}
-                <h5 class="text-muted">{{ p.hook_text }}</h5>
+<!--                <h5 class="text-muted">{{ p.hook_text }}</h5>-->
             {% endif %}
-        <p class="card-text">{{ p.content | truncatewords:45 }}</p>
+<!--        <p class="card-text">{{ p.content | truncatewords:45 }}</p>-->
     </div>
 
     {% endfor %}

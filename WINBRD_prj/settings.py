@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'community',
     'single_pages',
+    'raffle',
+    'promotion',
 ]
 
 MIDDLEWARE = [
