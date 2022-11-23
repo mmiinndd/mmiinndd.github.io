@@ -1,11 +1,11 @@
 from django.views.generic import ListView, DetailView
-from .models import Post
+from .models import rafflepost
 
 class PostList(ListView):
-    model = Post
+    model = rafflepost
     ordering = '-pk'
 
 class PostDetail(DetailView):
-    model = Post
+    model = rafflepost
 
 # Create your views here.
