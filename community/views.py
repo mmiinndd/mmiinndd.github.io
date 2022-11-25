@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Post
 
 class PostList(ListView):
@@ -7,5 +7,8 @@ class PostList(ListView):
 
 class PostDetail(DetailView):
     model = Post
+
+
+
 
 # Create your views here.
