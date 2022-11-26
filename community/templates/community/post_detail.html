@@ -14,7 +14,7 @@
                         <div class="d-flex align-items-center mt-lg-5 mb-4">
                             <img class="img-fluid rounded-circle" src="./img/1_2.PNG" alt="..." width="50" height="50" />
                             <div class="ms-3">
-                                <div class="fw-bold text-col"><a href="#">작성자명</a></div>
+                                <div class="fw-bold text-col"><a href="#">{{ post.author | upper }}</a></div>
                                 <div class="text-muted text-col">185cm/67kg</div>
                             </div>
                         </div>
@@ -25,12 +25,14 @@
                         <div id="post header">
                             <header class="mb-4">
                             <!-- Post title-->
-                            <h1 class="fw-bolder mb-1 text-col">유아인 X 무탠다드 아이템을 소개할게!</h1>
-                            <!-- Post meta content-->
+                            <h1 class="fw-bolder mb-1 text-col">{{ post.title }}</h1>
+
                             <div class="text-muted fst-italic mb-2 text-col">{{ post.created_at }}</div>
-                            <!-- Post categories-->
-                            <a class="badge bg-secondary text-decoration-none link-light text-col" href="https://www.musinsa.com/search/musinsa/integration?type=&q=%EB%AC%B4%ED%83%A0%EB%8B%A4%EB%93%9C">브랜드 보러가기</a>
-                            <a class="badge bg-secondary text-decoration-none link-light text-col" href="#!">Freebies</a>
+
+                            <a class="badge bg-secondary text-decoration-none link-light text-col" href="https://www.musinsa.com/search/musinsa/integration?type=&q=%EB%AC%B4%ED%83%A0%EB%8B%A4%EB%93%9C">View Brand</a>
+                            {% if user.is_authenticated and user == post.author %}
+                                <a class="badge bg-secondary text-decoration-none link-light text-col" href="/community/create_post/{{ post.pk }}/">Edit Post</a>
+                            {% endif %}
                             </header>
                         </div>
 
@@ -45,7 +47,7 @@
                             <!-- Post content-->
                             <section class="mb-5">
                                 <p class="fs-5 mb-4 text-col">{{ post.content }}</p>
-                                <h2 class="fw-bolder mb-4 mt-5 text-col">유아인 × 무탠다드와 함께 올가을의 끝자락을 마무리하고 한발 빠른 겨울을 준비하자.</h2>
+                                <h2 class="fw-bolder mb-4 mt-5 text-col">{{ post.hook_text }}</h2>
                                 <p class="fs-5 mb-4 text-col"></p>
                                 <p class="fs-5 mb-4 text-col"></p>
                                 {% if post.file_upload %}

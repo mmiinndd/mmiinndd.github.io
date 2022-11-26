@@ -3,6 +3,10 @@
 
 
 {% block main_area %}
+
+
+
+
 <div class="text-center mb-5 ">
     <h1 class="fw-bolder text-col">Our Style</h1>
     <p class="lead fw-normal text-muted mb-0">여러분들이 직접 고른 아이템을 재미있는 스토리와 스타일링 팁, 이미지와 함께 올려주세요. <br>댓글을 통해 개인, 브랜드와 직접 소통도 가능합니다.</p>
@@ -10,7 +14,7 @@
 <div class="row gx-5">
 
     {% for p in post_list %}
-    <div class="col-lg-6">
+    <div class="col-lg-6 mb-5">
         {% if p.head_image %}
             <div class="position-relative mb-5">
             <img class="img-fluid rounded-3 mb-3" src="{{ p.head_image.url }}"  alt="{{ p }} head image" width="800" height="900" />
@@ -18,9 +22,9 @@
         {% else %}
             <img class="img-fluid rounded-3 mb-3" src="https://picsum.photos/seed/{{ p.id }}/800/900" alt="random_image">
         {% endif %}
-        <a class="h3 fw-bolder text-decoration-none  stretched-link text-col" href="{{ p.get_absolute_url }}" alt="{{ p }} head image">{{ p.title }}</a>
+        <a class="h3 fw-bolder text-decoration-none  stretched-link text-col" href="{{ p.get_absolute_url }}" >{{ p.title }}</a>
             {% if p.hook_text %}
-<!--                <h5 class="text-muted">{{ p.hook_text }}</h5>-->
+                <h5 class="text-muted">{{ p.hook_text }}</h5>
             {% endif %}
 <!--        <p class="card-text">{{ p.content | truncatewords:45 }}</p>-->
     </div>

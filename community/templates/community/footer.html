@@ -1,8 +1,11 @@
 
-<!-- 게시물작성하기 -->
 <section class="py-5 bg-light">
     <div class="container px-5 my-5">
-        <h2 class="display-4 fw-bolder mb-4 text-col">Let's build something together</h2>
-        <a class="btn btn-lg btn-primary" href="#!">게시물 작성하기</a>
+        <h4 class="display-4 fw-bolder mb-4 text-col">당신의 패션 이야기를 들려주세요.</h4>
+            {% if user.is_authenticated %}
+                {% if user.is_superuser or user.is_staff %}
+                    <a class="btn btn-sm btn-primary float-right" href="/community/create_post/" role="button"><i class="fa fa-pen"></i>&nbsp;&nbsp;게시물 작성하기</a>
+                {% endif %}
+            {% endif %}
     </div>
 </section>
