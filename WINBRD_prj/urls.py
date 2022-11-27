@@ -24,10 +24,11 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('community/', include('community.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
     path('', include('single_pages.urls')),
     path('promotions/', include('promotion.urls')),
     path('raffle/', include('raffle.urls')),
-
+    path('markdownx/', include('markdownx.urls')),
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
