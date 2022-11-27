@@ -15,7 +15,7 @@
         <div class="col-lg-6 mb-5">
             {% if p.head_image %}
                 <div class="position-relative mb-5">
-                <img class="img-fluid rounded-3 mb-3" src="{{ p.head_image.url }}"  alt="{{ p }} head image" width="800" height="900" />
+                <img class="img-fluid rounded-3 mb-3" src="{{ p.head_image.url }}"  alt="{{ p }} head image">
                 </div>
             {% else %}
                 <img class="img-fluid rounded-3 mb-3" src="https://picsum.photos/seed/{{ p.id }}/800/900" alt="random_image">
@@ -38,9 +38,9 @@
     {% if is_paginated %}
         <!-- Pagination -->
         <ul class="pagination justify-content-center mb-4">
-            {% if page_obj.has_next %}
+            {% if page_obj.has_previous %}
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">&larr; Older</a>
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&larr; Older</a>
                 </li>
             {% else %}
                 <li class="page-item disabled">
@@ -48,9 +48,9 @@
                 </li>
             {% endif %}
 
-            {% if page_obj.has_previous %}
+            {% if page_obj.has_next %}
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Newer &rarr;</a>
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">Newer &rarr;</a>
                 </li>
             {% else %}
                 <li class="page-item disabled">
