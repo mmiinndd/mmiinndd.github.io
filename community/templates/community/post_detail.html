@@ -1,4 +1,4 @@
-{% extends 'community/base.html' %}
+{% extends 'community/base1.html' %}
 {% load crispy_forms_tags %}
 
 {% block head_title %}
@@ -109,14 +109,13 @@
                                             {% if user.is_authenticated and comment.author == user %}
                                                 <div class="float-right">
                                                     <a role="button"
-                                                       class="btn btn-xs btn-info float-right"
+                                                       class="btn btn-xs btn-info"
                                                        id="comment-{{ comment.pk }}-update-btn"
                                                        href="/community/update_comment/{{ comment.pk }}/">
                                                         수정
                                                     </a>
                                                     <a role="button"
                                                        href="#"
-
                                                        id="comment-{{ comment.pk }}-delete-modal-btn"
                                                        class="btn btn-xs btn-danger"
                                                        data-toggle="modal" data-target="#deleteCommentModal-{{ comment.pk }}">
