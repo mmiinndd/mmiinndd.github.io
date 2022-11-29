@@ -1,20 +1,22 @@
-{% extends 'community/base1.html' %}
-
-
+{% extends 'community/base.html' %}
 
 {% block main_area %}
+</br>
+</br>
+</br>
 
-
-    <div class="text-center mb-5 ">
+    <div class="text-center mb-5">
         <h1 class="fw-bolder text-col">Our Style</h1>
         <p class="lead fw-normal text-muted mb-0">여러분들이 직접 고른 아이템을 재미있는 스토리와 스타일링 팁, 이미지와 함께 올려주세요. <br>댓글을 통해 개인, 브랜드와 직접 소통도 가능합니다.</p>
     </div>
     <div class="row gx-5">
 
+    {% include 'community/footer.html' %}
+
         {% for p in post_list %}
         <div class="col-lg-6 mb-5">
             {% if p.head_image %}
-                <div class="position-relative mb-5">
+                <div class="position-relative mb-3">
                 <img class="img-fluid rounded-3 mb-3" src="{{ p.head_image.url }}"  alt="{{ p }} head image">
                 </div>
             {% else %}
@@ -24,20 +26,24 @@
                 {% if p.hook_text %}
                     <h5 class="text-muted">{{ p.hook_text }}</h5>
                 {% endif %}
-    <!--        <p class="card-text">{{ p.content | truncatewords:45 }}</p>-->
+                <!-- <p class="card-text">{{ p.content | truncatewords:45 }}</p>-->
         </div>
 
         {% endfor %}
 
+    </div>
+
+</br>
+</br>
+<hr>
+</br>
+</br>
 
 
-    {% include 'community/footer.html' %}
-
-
+    <!-- Pagination -->
 
     {% if is_paginated %}
-        <!-- Pagination -->
-        <ul class="pagination justify-content-center mb-4">
+        <ul class="pagination justify-content-center my-5">
             {% if page_obj.has_previous %}
                 <li class="page-item">
                     <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&larr; Older</a>
