@@ -1,14 +1,9 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 from .models import Post
 
-def promotion(request):
-    posts = Post.objects.all().order_by('-pk')
-
-    return render(
-        request,
-        'promotion/promotion.html',
-        {
-            'posts': posts,
-        }
-    )
+class PostList(ListView):
+    model = Post
+    ordering = '-pk'
+    paginate_by = 5
 # Create your views here.
+

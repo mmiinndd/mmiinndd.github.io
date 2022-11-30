@@ -9,7 +9,7 @@ from django.shortcuts import get_object_or_404
 class PostList(ListView):
     model = Post
     ordering = '-pk'
-    paginate_by = 5
+    paginate_by = 4
 
 
 class PostDetail(DetailView):
