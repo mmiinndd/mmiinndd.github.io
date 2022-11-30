@@ -1,0 +1,15 @@
+
+<section class="py-5 bg-light">
+    <div class="container px-5 ">
+        <div class="col-md-10"></div>
+        <div class="col-md-2">
+            {% if user.is_authenticated %}
+                {% if user.is_superuser or user.is_staff %}
+                    <a class="btn btn-sm btn-primary float-right" href="/raffle/create_post/" role="button"><i class="fa fa-pen"></i>&nbsp;&nbsp;게시물 작성하기</a>
+                    <h4 class="display-4 fw-bolder mt-4 text-col text-muted"></h4>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+

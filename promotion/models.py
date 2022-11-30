@@ -4,6 +4,7 @@ from markdownx.utils import markdown
 class Post(models.Model):
     title = models.CharField(max_length=30)
     content = MarkdownxField()
+    link = models.TextField(blank=True)
 
     head_image = models.ImageField(upload_to='raffle/images/%Y/%m/%d/', blank=True)
     create_at = models.DateTimeField(auto_now_add=True)

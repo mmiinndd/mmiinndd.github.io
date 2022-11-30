@@ -59,11 +59,11 @@
                 <div class="col">
                     <div class="col-md-7">
                         {% if p.head_image %}
-                            <a href="#">
+                            <a href="{{ p.link }}">
                                 <img class="img-fluid rounded mb-3 mb-md-0" src="{{ p.head_image.url }}" width="650" height="300" alt="">
                             </a>
                         {% else %}
-                            <a href="#">
+                            <a href="{{ p.link }}">
                                 <img class="img-fluid rounded mb-3 mb-md-0" src="https://picsum.photos/seed/{{ p.id }}/650/300" width="650" height="300" alt="random_image">
                             </a>
                         {% endif %}

@@ -15,6 +15,7 @@
                 <h1 class="fw-bolder text-col size-50"> Raffle</h1>
                 <p class="lead fw-normal text-muted">각 브랜드에서 진행하고 있는 래플, 럭키드로우 정보를 제공합니다.<br>지금 바로 응모하고 행운의 주인공이 되어 보세요 !</p>
             </div>
+            {% include 'raffle/footer.html' %}
 
             <!-- main container -->
 
@@ -62,18 +63,18 @@
                         {% for p in post_list %}
                             <div class="col-md-4 col-sm-6  fashion logo">
                                 {% if p.head_image %}
-                                    <a href="{{ p.get_absolute_url }}" class="portfolio_item"> <img src="{{ p.head_image.url }}" alt="{{ p }} head image" class="img-responsive" />
+                                    <a href="{{ p.get_absolute_url }}" class="portfolio_item"> <img src="{{ p.head_image.url }}" alt="{{ p }} head image" class="img-responsive" style="width:500px;height:400px;"/>
                                         <div class="portfolio_item_hover">
                                             <div class="portfolio-border clearfix">
-                                                <div class="item_info"> <span>{{ p.title }}</span> <em>{{ p.content }}</em> </div>
+                                                <div class="item_info"> <span>{{ p.title }}</span> <em>{{ p.hook_text }}</em> </div>
                                             </div>
                                         </div>
                                     </a>
                                 {% else %}
-                                     <a href="{{ p.get_absolute_url }}" class="portfolio_item"> <img src="https://picsum.photos/seed/{{ p.id }}/800/900" alt="random_image" class="img-responsive" />
+                                     <a href="{{ p.get_absolute_url }}" class="portfolio_item"> <img src="https://picsum.photos/seed/{{ p.id }}/400/458" alt="random_image" class="img-responsive" />
                                          <div class="portfolio_item_hover">
                                             <div class="portfolio-border clearfix">
-                                                <div class="item_info"> <span>{{ p.title }}</span> <em>{{ p.content }}</em> </div>
+                                                <div class="item_info"> <span>{{ p.title }}</span> <em>{{ p.hook_text }}</em> </div>
                                             </div>
                                         </div>
                                      </a>

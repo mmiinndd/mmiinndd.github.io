@@ -17,7 +17,7 @@
         <div class="col-lg-6 mb-5">
             {% if p.head_image %}
                 <div class="position-relative mb-3">
-                <img class="img-fluid rounded-3 mb-3" src="{{ p.head_image.url }}"  alt="{{ p }} head image">
+                <img class="img-fluid rounded-3 mb-3" src="{{ p.head_image.url }}"  alt="{{ p }} head image" style="width:800px;height:900px;">
                 </div>
             {% else %}
                 <img class="img-fluid rounded-3 mb-3" src="https://picsum.photos/seed/{{ p.id }}/800/900" alt="random_image">
