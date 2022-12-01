@@ -23,14 +23,15 @@
 
             <!-- main container -->
 
-            <form class="find-search-bar-form">
-                <div class="display-flex-center position-relative">
-                    <input class="find-search-bar" placeholder="검색하기" />
-                    <span class="material-symbols-outlined">
-                        Search
+            <div class="input-group">
+                <form class="find-search-bar-form">
+                    <input type="text" class="find-search-bar" placeholder="Search for..." id="search-input">
+                    <span class="material-symbols-outlined btn btn-secondary btn-sm" type="button" onclick="searchPost();">
+                        <i class="fa-solid fa-magnifying-glass"></i>
                     </span>
-                </div>
-            </form>
+                </form>
+            </div>
+
 
             <div class="main-container portfolio-inner clearfix">
 

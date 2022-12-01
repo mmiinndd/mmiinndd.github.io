@@ -10,6 +10,7 @@ class Post(models.Model):
     title = models.CharField(max_length=30)
     hook_text = models.CharField(max_length=100, blank=True)
     content = MarkdownxField()
+    link = models.TextField(blank=True)
 
     head_image = models.ImageField(upload_to='community/images/%Y/%m/%d/', blank=True)
     file_upload = models.FileField(upload_to='community/files/%Y/%m/%d/', blank=True)
@@ -33,6 +34,12 @@ class Post(models.Model):
     def get_content_markdown(self):
         return markdown(self.content)
 
+    def get_avatar_url(self):
+        if self.author.socialaccount_set.exists():
+            return self.author.socialaccount_set.first().get_avatar_url()
+        else:
+            return f'https://doitdjango.com/avatar/id/1352/4d89b091db5980c9/svg/{self.author.email}'
+
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
@@ -40,6 +47,12 @@ class Comment(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
+
+    def get_avatar_url(self):
+        if self.author.socialaccount_set.exists():
+            return self.author.socialaccount_set.first().get_avatar_url()
+        else:
+            return f'https://doitdjango.com/avatar/id/1352/4d89b091db5980c9/svg/{self.author.email}'
 
     def __str__(self):
         return f'{self.author}::{self.content}'

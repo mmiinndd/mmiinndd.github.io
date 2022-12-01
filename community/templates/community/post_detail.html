@@ -13,7 +13,7 @@
                 <div class="row gx-5">
                     <div class="col-lg-3">
                         <div class="d-flex align-items-center mt-lg-5 mb-4">
-                            <img class="img-fluid rounded-circle" src="./img/1_2.PNG" alt="..." width="50" height="50" />
+                            <img class="img-fluid rounded-circle" src="{{ post.get_avatar_url }}" alt="{{ post.author }}" width="50px">
                             <div class="ms-3">
                                 <div class="fw-bold text-col"><a href="#">{{ post.author | upper }}</a></div>
                                 <div class="text-muted text-col">185cm/67kg</div>
@@ -28,7 +28,9 @@
                             <!-- Post title-->
                             <h1 class="fw-bolder  text-col">{{ post.title }}</h1>
                             <div class="text-muted fst-italic mb-2 text-col">{{ post.created_at }}</div>
-                            <a class="badge bg-secondary text-decoration-none link-light text-col" href="https://www.musinsa.com/search/musinsa/integration?type=&q=%EB%AC%B4%ED%83%A0%EB%8B%A4%EB%93%9C">View Brand</a>
+                            {% if post.link %}
+                                <a class="badge bg-secondary text-decoration-none link-light text-col" href="{{ post.link }}">View Brand</a>
+                            {% endif %}
                             {% if user.is_authenticated and user == post.author %}
                                 <a class="badge bg-secondary text-decoration-none link-light text-col" href="/community/update_post/{{ post.pk }}/">Edit Post</a>
                             {% endif %}
@@ -100,7 +102,7 @@
                                 {% for comment in post.comment_set.iterator %}
                                     <!-- Single Comment -->
                                     <div class="media mb-4" id="comment-{{ comment.pk }}">
-                                        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                                        <img class="d-flex mr-3 rounded-circle" src="{{ comment.get_avatar_url }}" alt="{{ comment.author }}" width="50px">
                                         <div class="media-body">
                                             <h5 class="mt-0 text-col">
                                                 {{ comment.author.username }}
