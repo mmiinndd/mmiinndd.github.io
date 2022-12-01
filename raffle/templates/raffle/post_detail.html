@@ -10,27 +10,37 @@
 <section>
     <div class="iab-padding">
         <div class="col-md-7 col-md-offset-2">
+</br>
+</br>
             <h1 class="fw-bolder text-primary mb-3" style="margin:70px;">{{ post.title }}</h1>
             <div class="h-50"></div>
             {% if user.is_authenticated and user == post.author %}
-                <a class="btn btn-info btn-sm float-right" href="/raffle/update_post/{{ post.pk }}/" role="button"><i class="fas fa-pen"></i>  Edit Post</a>
+                <a class="btn btn-info btn-sm float-right" href="/raffle/update_post/{{ post.pk }}/" role="button"><i class="fas fa-pen"></i>Edit Post</a>
             {% endif %}
             <br>
             <h4 class="text-col mb-3">{{ post.hook_text }}</h4>
             <br>
-            <h4 class="text-col mb-3">{{ post.get_content_markdown | safe }} </h4>
+            <h5 class="text-col mb-3">{{ post.get_content_markdown | safe }}</h5>
             <br>
             <br>
             <!--Preview Image-->
             {% if post.head_image %}
-                <img src="{{ post.head_image.url }}" alt="{{ post.title }}" class="img-responsive" style="width:500px;height:600px;">
+                <img src="{{ post.head_image.url }}" alt="{{ post.title }}" class="img-responsive" style="width:500px;height:450px;">
                 <br>
-                <img src="{{ post.sc_image.url }}" alt="{{ post.title }}" class="img-responsive" style="width:500px;height:600px;">
+
+            <!--    <br>
+                <h5 class="text-col mb-3">{{ post.get_images_markdown | safe }}</h5>
+                 <br>  --!>
             {% else %}
                 <img class="img-responsive" src="http://picsum.photos/seed/{{ post.id }}/500/600" alt="random_image">
             {% endif %}
-           <p><a href="https://www.worksout.co.kr/contents/383?airbridge_referrer=airbridge%3Dtrue%26event_uuid%3D640009af-b7ee-4bef-adf5-4f957d6cffa5%26client_id%3Deebf8a75-ca4c-4e2e-8c4d-fc238c2758d4%26short_id%3Dct9ma8%26referrer_timestamp%3D1665892870561%26channel%3Dbraze%26campaign%3Draffle%26tracking_template_id%3Dbddf7b34babb5570a1fc18bace1b4e41%26ad_group%3Diabstudio%26og_tag_id%3D10617292%26routing_short_id%3D9mlc9&utm_source=braze&utm_campaign=raffle"><h2>응모 바로가기</h2></a></p>
+
+
+           <p><a href="{{ post.link }}"><h4 class="fw-bolder">응모 바로가기</h4></a></p>
            <br>
+           <br>
+           <br>
+
         </div>
     </div>
 </section>

@@ -6,7 +6,11 @@
 {% endblock %}
 
 {% block main_area %}
-    <h1>Create New Post</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 class="text-col mt-5">Create New Post</h1>
     <hr/>
     <form method="post" enctype="multipart/form-data">{% csrf_token %}
         {{ form | crispy }}

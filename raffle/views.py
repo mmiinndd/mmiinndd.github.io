@@ -12,7 +12,7 @@ class PostDetail(DetailView):
 
 class PostCreate(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = Post
-    fields = ['title', 'hook_text', 'content', 'sc_image', 'head_image']
+    fields = ['title', 'hook_text', 'content', 'head_image', 'images']
     def test_func(self):
         return self.request.user.is_superuser or self.request.user.is_staff
     def form_valid(self, form):
@@ -25,7 +25,7 @@ class PostCreate(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
 class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
-    fields = ['title', 'hook_text', 'content', 'sc_image', 'head_image']
+    fields = ['title', 'hook_text', 'content', 'head_image', 'images']
 
     template_name = 'raffle/post_update_form.html'
 
