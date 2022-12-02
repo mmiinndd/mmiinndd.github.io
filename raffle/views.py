@@ -7,6 +7,7 @@ from django.db.models import Q
 class PostList(ListView):
     model = Post
     ordering = '-pk'
+    paginate_by = 9
 
 class PostDetail(DetailView):
     model = Post
@@ -44,7 +45,7 @@ class PostSearch(PostList):
     def get_queryset(self):
         q = self.kwargs['q']
         post_list = Post.objects.filter(
-            Q(title__contains=q) | Q(tags__name__contains=q)
+            Q(title__contains=q)# | Q(tags__name__contains=q)
         ).distinct()
         return post_list
 

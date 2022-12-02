@@ -5,3 +5,7 @@ from .models import Post
 
 admin.site.register(Post, MarkdownxModelAdmin)
 # Register your models here.
+
+
+
+#admin.site.register(Tag, TagAdmin)
