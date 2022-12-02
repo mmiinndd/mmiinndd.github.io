@@ -34,7 +34,7 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
     template_name = 'raffle/post_update_form.html'
 
     def dispatch(self, request, *args, **kwargs):
-        if request.user.is_authenticated and request.user == self.get_object().author:
+        if request.user.is_authenticated and request.user:
             return super(PostUpdate, self).dispatch(request, *args, **kwargs)
         else:
             raise PermissionDenied

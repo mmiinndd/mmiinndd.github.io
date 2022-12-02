@@ -14,8 +14,8 @@
 </br>
             <h1 class="fw-bolder text-primary mb-3" style="margin:70px;">{{ post.title }}</h1>
 
-            {% if user.is_authenticated and user == post.author %}
-                <a class="btn btn-info btn-sm float-right" href="/raffle/update_post/{{ post.pk }}/" role="button"><i class="fas fa-pen"></i>Edit Post</a>
+            {% if user.is_authenticated and user %}
+                <a class="btn btn-info btn-xs float-right mb-3" href="/raffle/update_post/{{ post.pk }}/" role="button"><i class="fas fa-pen"></i>Edit Post</a>
             {% endif %}
 
             <br>
